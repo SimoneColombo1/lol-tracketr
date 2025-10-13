@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Games;
 use Illuminate\Http\Request;
 
 class GamesController extends Controller
@@ -12,7 +13,8 @@ class GamesController extends Controller
      */
     public function index()
     {
-        //
+        $games = Games::all();
+        return view('admin.games.index', compact("games"));
     }
 
     /**
@@ -34,9 +36,10 @@ class GamesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Games $game)
     {
-        //
+
+        return view('admin.games.show', compact("game"));
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\GamesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home');
 });
+
+Route::get('/games', [GamesController::class, 'index'])->name('admin.games.index');
+Route::get('/games/{game}', [GamesController::class, 'show'])->name('admin.games.show');
