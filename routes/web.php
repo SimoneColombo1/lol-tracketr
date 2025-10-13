@@ -24,3 +24,4 @@ Route::post('games/store', [GamesController::class, 'store'])->name('admin.games
 Route::get('/games/edit/{game}', [GamesController::class, 'edit'])->name('admin.games.edit');
 Route::put('games/{game}', [GamesController::class, 'update'])->name('admin.games.update');
 Route::get('/games/{game}', [GamesController::class, 'show'])->name('admin.games.show');
+Route::delete('games/{game}', [GamesController::class, 'destroy'])->name('admin.games.destroy');
