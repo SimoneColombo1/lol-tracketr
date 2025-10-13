@@ -19,4 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/games', [GamesController::class, 'index'])->name('admin.games.index');
+Route::get('/games/create', [GamesController::class, 'create'])->name('admin.games.create');
+Route::post('games/store', [GamesController::class, 'store'])->name('admin.games.store');
+Route::get('/games/edit/{game}', [GamesController::class, 'edit'])->name('admin.games.edit');
+Route::put('games/{game}', [GamesController::class, 'update'])->name('admin.games.update');
 Route::get('/games/{game}', [GamesController::class, 'show'])->name('admin.games.show');

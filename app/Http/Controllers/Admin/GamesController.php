@@ -22,7 +22,7 @@ class GamesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.games.create');
     }
 
     /**
@@ -30,7 +30,13 @@ class GamesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newGame = new Games();
+        $newGame->Risultato = $data["Risultato"];
+        $newGame->data = $data["data"];
+        $newGame->ruolo = $data["ruolo"];
+        $newGame->save();
+        return redirect()->route('admin.games.show', $newGame->id);
     }
 
     /**
@@ -45,24 +51,29 @@ class GamesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Games $game)
     {
-        //
+        return view('admin.games.edit', compact("game"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Games $game)
     {
-        //
+        $data = $request->all();
+
+        $game->update($data);
+
+        return redirect()->route('admin.games.show', $game);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Games $game)
     {
-        //
+        $game->delete();
+        return redirect()->route('admin.games.index');
     }
 }
