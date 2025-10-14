@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("nome");
             $table->string("descrizione");
-            $table->unsignedBigInteger("game_id");
-            $table->foreign('game_id')
+            $table->unsignedBigInteger("games_id");
+            $table->foreign('games_id')
                 ->references('id')
                 ->on('games');
             $table->timestamps();

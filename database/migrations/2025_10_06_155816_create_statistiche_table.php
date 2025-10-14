@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer("cs");
             $table->integer("kp");
             $table->float('durata');
-            $table->unsignedBigInteger("game_id");
-            $table->foreign('game_id')
+            $table->unsignedBigInteger("games_id");
+            $table->foreign('games_id')
                 ->references('id')
                 ->on('games');
             $table->timestamps();

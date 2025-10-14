@@ -16,9 +16,8 @@ return new class extends Migration
             $table->boolean("Risultato");
             $table->date("data");
             $table->string("ruolo");
-            $table->unsignedBigInteger("campione_id");
-            $table->unsignedBigInteger("errori_id");
-            $table->foreign('campione_id')
+            $table->unsignedBigInteger("campioni_id");
+            $table->foreign('campioni_id')
                 ->references('id')
                 ->on('campioni');
 

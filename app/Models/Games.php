@@ -11,7 +11,7 @@ class Games extends Model
     protected $fillable = ['Risultato', 'data', 'ruolo'];
     public function campioni()
     {
-        return $this->belongsTo(Campioni::class, statistiche::class, errori::class);
+        return $this->belongsTo(Campioni::class);
     }
     public function statistiche()
     {

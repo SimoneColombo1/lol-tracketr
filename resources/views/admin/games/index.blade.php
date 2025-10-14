@@ -24,8 +24,9 @@
                     <input type="submit" value="delete">
                 </form>
             @endif
-            {{ $game->campioni->nome }}
 
+            {{ $game->statistiche->kill }}
+            {{ $game->campioni->nome ?? 'Nessun campione' }}
         </li>
     @endforeach
 @endsection

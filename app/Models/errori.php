@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class errori extends Model
 {
+    protected $table = 'errori';
     use HasFactory;
     public function games()
     {
+
         return $this->hasMany(Games::class);
     }
 }
