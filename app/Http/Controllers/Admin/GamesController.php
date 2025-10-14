@@ -13,7 +13,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-        $games = Games::all();
+        $games = Games::with('campioni', 'statistiche', 'errori')->get();
         return view('admin.games.index', compact("games"));
     }
 

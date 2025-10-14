@@ -15,7 +15,13 @@ return new class extends Migration
             $table->id();
             $table->boolean("Risultato");
             $table->date("data");
-            $table-> string("ruolo");
+            $table->string("ruolo");
+            $table->unsignedBigInteger("campione_id");
+            $table->unsignedBigInteger("errori_id");
+            $table->foreign('campione_id')
+                ->references('id')
+                ->on('campioni');
+
             $table->timestamps();
         });
     }

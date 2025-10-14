@@ -24,7 +24,7 @@
                     <input type="submit" value="delete">
                 </form>
             @endif
-
+            {{ $game->campioni->nome }}
 
         </li>
     @endforeach
